@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+//adding in modules.
 var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
@@ -26,19 +26,33 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-
+//SETTING UP SESSIONS
 app.use(session({
   secret: 'Elladog1',
   resave: false,
   saveUninitialized: false
 }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(express.static(path.join(__dirname, 'public')));
+//PASSPORT CONFIG, bringing in our Account schema
+var Account = require('./models/account');
+passport.use(new LocalStrategy(Account.authenticate()));
+passport.serializeUser(Account.serializeUser());
+//serializeUser lets password be stored in cookies.
+passport.deserializeUser(Account.deserializeUser());
+// passport.serializeUser(function (user,done){
+//   done(null, user.id);
+// });
+// passport.deserializeUser(function (id,done){
 
+// });
 
+//MONGOOSE
 mongoose.connect('mongodb://localhost:27017/coffee');
+//mongoose.connect sets up our db collection right here.
 app.use('/', routes);
 // app.use('/api', apiRoutes);
 app.use('/users', users);

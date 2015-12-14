@@ -1,8 +1,14 @@
+/* line 1, ../../assets/compass/sass/style.scss */
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: red;
 }
 
-a {
-  color: #00B7FF;
+/* line 1, ../../assets/compass/sass/views/_home.scss */
+body {
+  background-color: green;
+}
+
+/* line 1, ../../assets/compass/sass/views/_subscribe.scss */
+body {
+  background-color: purple;
 }

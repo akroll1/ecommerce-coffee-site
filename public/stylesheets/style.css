@@ -1,0 +1,35 @@
+/* line 6, ../../assets/compass/sass/style.scss */
+body {
+  background-color: #edebe6;
+}
+
+/* line 9, ../../assets/compass/sass/style.scss */
+.header {
+  height: 100px;
+  background-color: #3a2f27;
+  position: relative;
+}
+
+/* line 14, ../../assets/compass/sass/style.scss */
+.header img {
+  width: 10%;
+  margin-top: 20px;
+  margin-left: 80px;
+}
+
+/* line 19, ../../assets/compass/sass/style.scss */
+.page-wrapper {
+  color: #6d5219;
+  height: 450px;
+}
+
+/* line 23, ../../assets/compass/sass/style.scss */
+.page-wrapper h1 {
+  color: #6d5219;
+}
+
+/* line 26, ../../assets/compass/sass/style.scss */
+.footer {
+  height: 300px;
+  background-color: #3a2f27;
+}

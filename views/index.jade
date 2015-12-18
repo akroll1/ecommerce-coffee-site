@@ -16,7 +16,7 @@ block content
 					p#header-sub-text Freshly roasted coffee beans delivered weekly to your door.
 				#subscribe-box
 					#sub-header Craft Coffee. Good Coffee.
-					form(role='form', action="/login",method="post")
+					form(role='form', action="/login", method="post")
 						.form-group
 							label Enter Email Address
 							input.form-control(type='text', name="username")
@@ -27,7 +27,7 @@ block content
 							button(type='submit' name='login') Login
 							#or-button OR
 							button(type='submit' name='getStarted' value='getStarted') Get Started
-						//- <a href="/register">Get Started</a>
+						<a href="/register">Get Started</a>
 	.container
 		.head-box
 			h2 We Source coffee beans from around the World and roast them fresh daily

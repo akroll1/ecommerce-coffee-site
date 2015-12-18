@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	.info
+		form(name="verify-form", action="/", method="get")	
+		h1 Name: #{username}
+			h2 Frequency: #{frequency}
+			h2 Pounds: #{pounds}
+			h2 Grind: #{grind}
+			input.btn.btn-danger.btn-lg(type="submit", name="submit-button")

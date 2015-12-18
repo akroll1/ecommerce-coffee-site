@@ -12,6 +12,16 @@ var session = require('express-session');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var routesChoices = require('./routes/choices');
+var routeDelivery = require('./routes/delivery');
+var routePayment = require('./routes/payment');
+var routeEmail = require('./routes/email');
+var routeLogin = require('./routes/login');
+var routeRegister = require('./routes/register');
+var routeLogout = require('./routes/logout');
+var routeThankyou = require('./routes/thankyou');
+var routeStripe = require('./routes/stripe');
+var routeAdmin = require('./routes/admin');
 // var apiRoutes = require('./routes/api');
 
 var app = express();
@@ -54,6 +64,17 @@ passport.deserializeUser(Account.deserializeUser());
 mongoose.connect('mongodb://localhost:27017/coffee');
 //mongoose.connect sets up our db collection right here.
 app.use('/', routes);
+app.use('/choices', routesChoices);
+app.use('/delivery', routeDelivery);
+app.use('/payment', routePayment);
+app.use('/email', routeEmail);
+app.use('/login', routeLogin);
+app.use('/register', routeRegister);
+app.use('/logout', routeLogout);
+app.use('/thankyou', routeThankyou);
+app.use('/stripe', routeStripe);
+app.use('/admin', routeAdmin);
+
 // app.use('/api', apiRoutes);
 app.use('/users', users);
 

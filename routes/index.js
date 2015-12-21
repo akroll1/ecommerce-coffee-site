@@ -14,8 +14,11 @@ var stripe = require("stripe")(
 //===========LANDING PAGE===============
 router.get('/', function (req, res, next) {
   	console.log(req.body);
+  	console.log('Hello Im res' + res.body);
 
   	res.render('index', { username: req.session.username,accessLevel: req.session.accessLevel });
+
+
 });
 
 module.exports = router;
